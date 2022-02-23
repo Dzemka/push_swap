@@ -58,11 +58,11 @@ RM = rm -rf
 
 CFLAGS = -Wall -Werror -Wextra
 
-.PHONY	:	all bonus clean fclean re
+.PHONY	:	all libft bonus clean fclean re
 
-all	:	$(NAME) bonus
+all	: libft $(NAME) bonus
 
-$(NAME)	: $(OBJ_PATH) $(OBJ) $(LIB_DIR)$(LIB)
+$(NAME)	: $(OBJ_PATH) $(OBJ)
 	$(CC) -o $@ $(OBJ) $(LIB_DIR)$(LIB)
 
 
@@ -87,7 +87,7 @@ $(OBJ_BNS_PATH)%.o	:	$(addprefix $(SRC_BNS_PATH), %.c) $(BNS_DIR)$(PS_BNS_HEADER
 	$(CC) $(CFLAGS) -c $< -o $@
 
 
-$(LIB_DIR)$(LIB)	:
+libft	:
 	make -C $(LIB_DIR) all
 
 clean	:
