@@ -33,7 +33,7 @@ static int	ft_check_errors(char *str)
 
 	i = 0;
 	len_str = ft_strlen(str);
-	if (str[i] == '-')
+	if (str[i] == '-' && str[1] != '\0')
 		i++;
 	while (str[i])
 	{
